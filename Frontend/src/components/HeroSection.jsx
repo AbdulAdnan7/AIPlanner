@@ -22,7 +22,7 @@ const Home = () => {
             <ambientLight intensity={0.5} />
             <directionalLight position={[3, 3, 3]} />
             <PaperPlane position={[0, 0, 0]} />
-            <OrbitControls />
+          
           </Canvas>
         </div>
 
