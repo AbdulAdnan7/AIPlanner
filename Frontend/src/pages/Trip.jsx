@@ -11,8 +11,45 @@ const Trip = () => {
     budget: '',
   })
 
+  const [aiResponse, setAiResponse] = useState("");
   const [loading, setIsLoading] = useState(false);
   const navigate = useNavigate()
+
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+  const handleGenerate = async () => {
+    const {name, form, to, budget,friends,category} = formData;
+
+    const prompt = `Generate a travel itinerary for ${name} and ${friends} friends going from ${from} to ${to}. The trip should fall under the ${category} category with a budget of ₹${budget}. Include activities, accommodations, travel mode, and food recommendations.`;
+
+    setIsLoading(true);
+    setAiResponse("");
+
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generativeContent?key=${API_KEY}`,
+        {
+          method: 'POST',
+          headers: {"Content-Type": "applications/json"},
+          body: JSON.stringify({
+            contents: [
+              {
+              role: "user",
+              parts: [{ Text: prompt}]
+              }
+            ]
+          })
+        }
+      );
+      const data = await res.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      setAiResponse(text || 'No Response Found')
+    } catch (err) {
+      console.error(err)
+      setAiResponse('Something went wrong.')
+    } finally {
+      setIsLoading(false)
+    }
+  } 
 
  const handleSubmit = (e) => {
   e.preventDefault()
@@ -55,7 +92,7 @@ const Trip = () => {
           </div>
 
           <select
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
           >
             <option value="">Select Category</option>
             <option value="Nature">Nature</option>
@@ -63,6 +100,16 @@ const Trip = () => {
             <option value="Hotel">Hotel</option>
             <option value="Monuments">Monuments</option>
             <option value="Cultural">Cultural</option>
+          </select>
+
+          <select 
+           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
+          >
+            <option value="">Select Partner</option>
+             <option value="Wife">Wife</option>
+             <option value="Family">Family</option>
+             <option value="Friend">Friend</option>
+             <option value="Solo">Solo</option>
           </select>
 
             <input
