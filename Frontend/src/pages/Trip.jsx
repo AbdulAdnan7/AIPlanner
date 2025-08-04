@@ -7,8 +7,10 @@ const Trip = () => {
     from: '',
     to: '',
     category: '',
-    friends: '',
+    people: '',
+    partners: '',
     budget: '',
+    days: '',
   })
 
   const [aiResponse, setAiResponse] = useState("");
@@ -18,23 +20,24 @@ const Trip = () => {
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   const handleGenerate = async () => {
-    const {name, form, to, budget,friends,category} = formData;
+    const {name, from, to,days, budget,people, partners, category} = formData;
 
-    const prompt = `Generate a travel itinerary for ${name} and ${friends} friends going from ${from} to ${to}. The trip should fall under the ${category} category with a budget of ₹${budget}. Include activities, accommodations, travel mode, and food recommendations.`;
+    const prompt = `Generate a ${days}-day travel itinerary for ${name} traveling with ${partners}${people ? ` and ${people}` : ''}, going from ${from} to ${to}. The trip should fall under the ${category} category with a budget of ₹${budget}. Include activities, accommodations, travel mode, and food recommendations.`;
+
 
     setIsLoading(true);
     setAiResponse("");
 
     try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generativeContent?key=${API_KEY}`,
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
         {
           method: 'POST',
-          headers: {"Content-Type": "applications/json"},
+          headers: {"Content-Type": "application/json"},
           body: JSON.stringify({
             contents: [
               {
               role: "user",
-              parts: [{ Text: prompt}]
+              parts: [{ text: prompt}]
               }
             ]
           })
@@ -51,20 +54,23 @@ const Trip = () => {
     }
   } 
 
- const handleSubmit = (e) => {
-  e.preventDefault()
-  setIsLoading(true)
- }
+
 
  const handleChange = (e) => {
   setFormData({...formData, [e.target.name] : e.target.value})
  }
 
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  handleGenerate()
+ }
+
   return (
+    <>
     <section className='flex justify-center items-center mt-20'>
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <form
-      onClick={handleSubmit}
+      onSubmit={handleSubmit}
       className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6 sm:p-10 space-y-6">
         <h2 className="text-3xl font-bold text-center text-purple-600">
           Plan Your Trip
@@ -72,26 +78,46 @@ const Trip = () => {
 
         <div className="space-y-4">
           <input
+          name='name'
             type="text"
+            onChange={handleChange}
+            value={formData.name}
             placeholder="Your Name"
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
           />
 
+  <input
+    type="number"
+    name="days"
+    placeholder="Number of Days"
+    onChange={handleChange}
+    value={formData.days}
+    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
+  />
+
           <div className="flex flex-col sm:flex-row gap-4">
             <input
+            name='from'
               type="text"
+              onChange={handleChange}
+              value={formData.from}
               placeholder="From"
               className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
             />
             <input
+            name='to'
               type="text"
               placeholder="To"
+              onChange={handleChange}
+              value={formData.to}
               className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
             />
             
           </div>
 
           <select
+          onChange={handleChange}
+          value={formData.category}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
           >
             <option value="">Select Category</option>
@@ -103,6 +129,9 @@ const Trip = () => {
           </select>
 
           <select 
+          name='partners'
+          onChange={handleChange}
+          value={formData.partners}
            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
           >
             <option value="">Select Partner</option>
@@ -114,12 +143,18 @@ const Trip = () => {
 
             <input
               type="text"
-              placeholder="Friends"
+              name='people'
+              placeholder="People"
+              onChange={handleChange}
+              value={formData.people}
                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
             />
 
           <input
             type="number"
+            name='budget'
+            onChange={handleChange}
+            value={formData.budget}
             placeholder="Budget (e.g., ₹50000)"
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-400"
           />
@@ -128,14 +163,18 @@ const Trip = () => {
 
         <button
           type="submit"
+          disabled={loading}
           className="w-full bg-purple-500 text-white font-medium py-2 rounded-md hover:bg-purple-600 transition duration-200"
         >
-          Plan Trip
+        {loading ? 'Generating' : 'Generate Itenerary'}
         </button>
       </form>
     </div>
 
+
     </section>
+   
+    </>
   )
 }
 
