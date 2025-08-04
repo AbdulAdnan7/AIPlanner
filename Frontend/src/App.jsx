@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Navbar from './components/Navbar'
 import Trip from './pages/Trip'
+import Result from './pages/Result'
 
 function App() {
    const route = createBrowserRouter([
@@ -21,6 +22,13 @@ function App() {
       element: <>
       <Navbar />
       <Trip />
+      </>
+    },
+    {
+      path: '/trip-result',
+      element: <>
+      <Navbar />
+      <Result />
       </>
     }
    ])

@@ -40,7 +40,7 @@ const Navbar = () => {
         </NavLink>
 
          <NavLink
-          to="/planTrip"
+          to="/trip-result"
           className={({ isActive }) =>
             isActive
               ? 'text-purple-600 font-semibold'
