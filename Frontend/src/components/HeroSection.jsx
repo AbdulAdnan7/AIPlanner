@@ -26,15 +26,15 @@ const Home = () => {
           </Canvas>
         </div>
 
-        <div className="relative z-10 text-left space-y-4 max-w-2xl">
+        <div className="relative px-4 z-10 text-left space-y-4 max-w-2xl">
           <h1 className="text-4xl font-bold text-gray-800">Plan Smarter, Travel Further</h1>
           <h4 className="text-md text-gray-600">
             Let AI craft your perfect itinerary — Personalized, Optimized, and Stress-free
           </h4>
 
-          <div className="inline-block p-2 rounded-xl">
+          <div className="inline-block rounded-xl">
              <NavLink to='/planTrip'>
-            <button className="px-5 py-2 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 transition-all duration-300 text-base">
+            <button className="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 transition-all duration-300 text-base">
               ✨ Build My Trip Now
             </button>
             </NavLink>

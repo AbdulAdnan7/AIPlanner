@@ -30,7 +30,7 @@ function App() {
       <Navbar />
       <Result />
       </>
-    }
+    },
    ])
 
   return (
