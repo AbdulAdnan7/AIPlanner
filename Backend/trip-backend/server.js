@@ -11,6 +11,10 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Ai Planner backend is running')
+})
+
 
 app.post('/api/itinerary', (req, res) => {
     const newItinerary = req.body;
