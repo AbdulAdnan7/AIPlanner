@@ -5,7 +5,7 @@ import { FaPlaneDeparture } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white fixed bottom-0 md:top-0 md:bottom-auto left-0 w-full z-50 shadow-md py-3 px-4 flex justify-between md:items-center md:justify-between">
+    <nav className="bg-white fixed bottom-0 md:top-0 md:bottom-auto left-0 w-full z-50 shadow-md py-3 px-8 flex justify-between md:items-center md:justify-between">
       
         <h1 className='flex md:hidden text-purple-600 font-bold text-lg'>AI</h1>
 <h1 className='hidden md:flex text-purple-600 font-bold text-xl'>AI-Plan</h1>

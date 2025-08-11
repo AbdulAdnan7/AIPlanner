@@ -1,12 +1,14 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
-import How from '../components/How'
+import WhySection from '../components/Why'
+import HowToUse from '../components/HowToUse'
 
 const Home = () => {
   return (
   <>
-  <HeroSection />  
-  <How />
+  <HeroSection /> 
+  <HowToUse />
+  <WhySection />
   </>
   )
 }
