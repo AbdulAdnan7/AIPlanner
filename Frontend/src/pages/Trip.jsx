@@ -49,7 +49,7 @@ const Trip = () => {
 
       const finalItinerary = text || 'No Response Found';
 
-      await fetch('http://localhost:5000/api/itinerary', {
+      await fetch('https://aiplanner-t2fu.onrender.com/api/itinerary', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
