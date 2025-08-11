@@ -28,7 +28,7 @@ const WhySection = () => {
   return (
     <>
       <div className='flex justify-center mt-4'>
-        <h1 className='text-center text-2xl font-semibold'>Why we should Use</h1>
+        <h1 className='text-center text-2xl font-semibold'>Why You'll Love it</h1>
       </div>
       <div className='flex justify-center m-4 mt-2'>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full'>
