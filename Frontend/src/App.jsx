@@ -25,7 +25,7 @@ function App() {
       </>
     },
     {
-      path: '/trip-result',
+      path: '/results',
       element: <>
       <Navbar />
       <Result />
