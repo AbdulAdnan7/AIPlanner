@@ -65,8 +65,8 @@ const Home = () => {
     </div>
    </section>
 
-   <section className='bg-[#4169E1] min-h-screen'>
-    
+   <section className='min-h-screen'>
+
    </section>
     </>
   );
