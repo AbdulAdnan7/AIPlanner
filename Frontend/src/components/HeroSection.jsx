@@ -1,11 +1,6 @@
 import React from 'react'
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import PaperPlane from './PaperPlaine';
 import { NavLink } from 'react-router';
-
-
-
+import { FaMapMarkedAlt, FaPlane, FaUtensils, FaLandmark } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -14,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-   <section className='h-screen flex mt-16 justify-center p-6 ml-4 md:p-4' >
+   <section className='h-[80vh] flex mt-16 justify-center p-6 ml-4 md:p-4' >
   <div>
     <h1 className='text-3xl text-center'>Plan Ahead With Ease. Using Our <span className='text-[#4169E1] font-semibold'> AI Trip Planner</span></h1>
     <p className='text-center mt-4 font-semibold ml-4'>Let our AI create a personalized itinerary for your next adventure.</p>
@@ -26,25 +21,43 @@ const Home = () => {
 </button>
 </NavLink>
 
+  </div>
+<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-20 gap-4'>
+  <div className='col-span-2 bg-[#4169E1] h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+    <FaMapMarkedAlt className='text-3xl mb-2'/>
+    <h3 className='font-bold text-lg'>Personalized Itineraries</h3>
+    <p className='text-sm'>AI creates custom travel plans based on your preferences.</p>
+  </div>
+
+  <div className='col-span-2 bg-[#4169E1]/90 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+    <FaPlane className='text-3xl mb-2'/>
+    <h3 className='font-bold text-lg'>Flight & Hotel Suggestions</h3>
+    <p className='text-sm'>Get AI-recommended flights and hotels for your destination.</p>
+  </div>
+
+  <div className='col-span-2 bg-[#4169E1]/80 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+    <FaUtensils className='text-3xl mb-2'/>
+    <h3 className='font-bold text-lg'>Top Restaurants</h3>
+    <p className='text-sm'>Discover popular local eateries and hidden gems easily.</p>
+  </div>
+
+  <div className='col-span-2 bg-[#4169E1]/70 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+    <FaLandmark className='text-3xl mb-2'/>
+    <h3 className='font-bold text-lg'>Points of Interest</h3>
+    <p className='text-sm'>Explore attractions and activities curated by AI for your trip.</p>
+  </div>
+</div>
+
+
+
+
+
     </div>
-
-  </div>
-  <div>
-
-  </div>
    </section>
 
-{
-  /**
-   * <section class="h-screen flex items-center justify-center bg-gray-100">
-  <div class="text-center">
-    <h1 class="text-5xl font-bold mb-4">Welcome to My Website</h1>
-    <p class="text-lg text-gray-700">This is the hero section subtitle</p>
-  </div>
-</section>
-
-   */
-}
+   <section className='bg-[#4169E1] min-h-screen'>
+    
+   </section>
     </>
   );
 };
