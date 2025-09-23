@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router';
-import { FaMapMarkedAlt, FaPlane, FaUtensils, FaLandmark } from 'react-icons/fa';
+import { FaMapMarkedAlt, FaPlane, 
+FaUtensils, FaLandmark } from 'react-icons/fa';
+import Logo from '../../public/Logo.png'
 
 
 const Home = () => {
@@ -11,7 +13,14 @@ const Home = () => {
     <>
    <section className='h-[80vh] flex mt-16 justify-center p-6 ml-4 md:p-4' >
   <div>
-    <h1 className='text-3xl text-center'>Plan Ahead With Ease. Using Our <span className='text-[#4169E1] font-semibold'> AI Trip Planner</span></h1>
+   <h1 className='text-3xl text-center flex items-center justify-center gap-2'>
+  Plan Ahead With Ease. Using Our
+  <span className='text-[#4169E1] font-semibold flex items-center gap-2'>
+    AI Trip Planner
+    <img src={Logo} alt="Logo" className='h-12 w-14' />
+  </span>
+</h1>
+
     <p className='text-center mt-4 font-semibold ml-4'>Let our AI create a personalized itinerary for your next adventure.</p>
     <div className='flex justify-center items-center mt-4'>
 
