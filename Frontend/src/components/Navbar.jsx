@@ -1,12 +1,11 @@
 import React from 'react';
 import Logo from '../../public/Logo.png'
 import { NavLink } from 'react-router-dom';
-import { AiFillHome, AiOutlineUser } from 'react-icons/ai';
-import { FaPlaneDeparture } from 'react-icons/fa';
+
 
 const Navbar = () => {
   return (
-  <nav className='flex items-center justify-between bg-[rgb(230,230,230)] m-2'>
+  <nav className='flex items-center justify-between  m-2'>
 
    <div className='flex'>
     <NavLink to={'/'}>
@@ -17,7 +16,7 @@ const Navbar = () => {
     alt="Logo" />
     </NavLink>
    </div>
- <div className='flex items-center gap-6'>
+ <div className='items-center gap-6 hidden md:flex'>
   <NavLink
     to='/'
     className={({ isActive }) =>

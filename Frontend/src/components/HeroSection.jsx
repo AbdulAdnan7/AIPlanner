@@ -16,7 +16,8 @@ const Home = () => {
     <>
      <section className='max-w-full h-full'>
      <div className='min-h-full text-7xl'>
-      Hello how are ytou
+        Plan Ahead With Ease.
+           Using Our AI Trip Planner.
      </div>
      </section>
     </>
