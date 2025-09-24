@@ -5,6 +5,7 @@ FaUtensils, FaLandmark } from 'react-icons/fa';
 import Logo from '../../public/Logo.png'
 import ScrollReveal from './ScrollReveal';
 import StatsCounter from './StatCounter';
+import GraphsSection from './GraphsSections';
 
 
 const Home = () => {
@@ -78,7 +79,7 @@ const Home = () => {
    </section>
 
    <section className='min-h-screen'>
-
+    <GraphsSection />
    </section>
     </>
   );
