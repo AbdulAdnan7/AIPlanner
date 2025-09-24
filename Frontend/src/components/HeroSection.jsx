@@ -34,8 +34,14 @@ const Home = () => {
 </NavLink>
 
   </div>
+  <div>
     <StatsCounter />
-<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-20 gap-4'>
+
+  </div>
+  <div className='flex text-center justify-center'>
+  <h1 className='text-4xl italic font-semibold'>What AI Can Do</h1>
+  </div>
+<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-4'>
 
   <div className='col-span-2 bg-[#4169E1] h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
     <FaMapMarkedAlt className='text-3xl mb-2'/>
@@ -50,13 +56,13 @@ const Home = () => {
     <p className='text-sm'>Get AI-recommended flights and hotels for your destination.</p>
   </div>
 
-  <div className='col-span-2 bg-[#4169E1]/80 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+  <div className='col-span-2 bg-[#4169E1]/90 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
     <FaUtensils className='text-3xl mb-2'/>
     <h3 className='font-bold text-lg'>Top Restaurants</h3>
     <p className='text-sm'>Discover popular local eateries and hidden gems easily.</p>
   </div>
 
-  <div className='col-span-2 bg-[#4169E1]/70 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
+  <div className='col-span-2 bg-[#4169E1]/90 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
     <FaLandmark className='text-3xl mb-2'/>
     <h3 className='font-bold text-lg'>Points of Interest</h3>
     <p className='text-sm'>Explore attractions and activities curated by AI for your trip.</p>
