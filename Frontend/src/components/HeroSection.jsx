@@ -3,6 +3,8 @@ import { NavLink } from 'react-router';
 import { FaMapMarkedAlt, FaPlane, 
 FaUtensils, FaLandmark } from 'react-icons/fa';
 import Logo from '../../public/Logo.png'
+import ScrollReveal from './ScrollReveal';
+import StatsCounter from './StatCounter';
 
 
 const Home = () => {
@@ -32,12 +34,15 @@ const Home = () => {
 </NavLink>
 
   </div>
+    <StatsCounter />
 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-20 gap-4'>
+
   <div className='col-span-2 bg-[#4169E1] h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
     <FaMapMarkedAlt className='text-3xl mb-2'/>
     <h3 className='font-bold text-lg'>Personalized Itineraries</h3>
     <p className='text-sm'>AI creates custom travel plans based on your preferences.</p>
   </div>
+
 
   <div className='col-span-2 bg-[#4169E1]/90 h-40 rounded-lg shadow-md hover:scale-105 transform transition-all duration-300 p-4 text-white flex flex-col justify-center items-start'>
     <FaPlane className='text-3xl mb-2'/>
@@ -57,6 +62,7 @@ const Home = () => {
     <p className='text-sm'>Explore attractions and activities curated by AI for your trip.</p>
   </div>
 </div>
+
 
 
 
