@@ -31,11 +31,12 @@ const Home = () => {
     <p className='text-center mt-4 font-semibold ml-4'>Let our AI create a personalized itinerary for your next adventure.</p>
     <div className='flex justify-center items-center mt-4'>
 
-  <NavLink to={'/planTrip'}>
- <button className="bg-[#4169E1] p-4 rounded text-white hover:bg-[#3556c7] transition-colors duration-300">
-  Generate Now
-</button>
+<NavLink to={'/planTrip'}>
+  <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+    Generate Now
+  </button>
 </NavLink>
+
 
   </div>
   <div>
