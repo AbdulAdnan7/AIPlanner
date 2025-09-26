@@ -5,17 +5,20 @@ FaUtensils, FaLandmark } from 'react-icons/fa';
 import Logo from '../../public/Logo.png'
 import ScrollReveal from './ScrollReveal';
 import StatsCounter from './StatCounter';
-import GraphsSection from './GraphsSections';
 import Statisics from './Statisics';
+import WorldMapSection from './Statisics';
+import AIComparisonChart from './Statisics';
+import AIComparison from './Statisics';
+import TripComparison from './Statisics';
 
 
-const Home = () => {
+const HeroSection = () => {
   
 
 
   return (
     <>
-   <section className='h-[80vh] flex mt-16 justify-center p-6 ml-4 md:p-4 ' >
+   <section className='min-h-[80vh] flex mt-16 justify-center p-6 ml-4 md:p-4 ' >
       <div>
  
 
@@ -155,13 +158,21 @@ const Home = () => {
 
     </div>
 
+
     
    </section>
 
-  
+  <section className='mt-10 px-6'>
+  <div className='text-center' >
+ <h1 className='text-4xl font-semibold italic'>TripMind Statistics</h1>
+  </div>
+  <div>
+  <TripComparison />
+  </div>
+ </section> 
 
     </>
   );
 };
 
-export default Home;
+export default HeroSection;

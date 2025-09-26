@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@google/genai": "^1.12.0",
+    "@react-oauth/google": "^0.12.2",
     "@react-three/drei": "^10.6.1",
     "@react-three/fiber": "^9.3.0",
     "@tailwindcss/vite": "^4.1.11",
+    "firebase": "^12.3.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.539.0",
     "openai": "^5.11.0",

@@ -7,10 +7,7 @@ const Home = () => {
   return (
   <>
   <HeroSection /> 
-  <div>
-  <Statisics/>
 
-  </div>
   </>
   )
 }

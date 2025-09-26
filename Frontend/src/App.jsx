@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Navbar from './components/Navbar'
 import Trip from './pages/Trip'
 import Result from './pages/Result'
+import Login from './Authentication/Login'
 
 function App() {
    const route = createBrowserRouter([
@@ -31,6 +32,13 @@ function App() {
       <Result />
       </>
     },
+    {
+      path: '/login',
+      element: <>
+      <Navbar />
+      <Login />
+      </>
+    }
    ])
 
   return (
